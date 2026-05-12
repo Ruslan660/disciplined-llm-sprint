@@ -1,0 +1,21 @@
+{
+  "name": "disciplined-llm-sprint",
+  "owner": {
+    "name": "Ruslan"
+  },
+  "metadata": {
+    "description": "Disciplined 7-phase LLM-assisted sprint workflow for Claude Code.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "disciplined-llm-sprint",
+      "description": "Orchestrates a 7-phase disciplined sprint — kickoff gate, planning, lectures, TDD execution with Block Recap, manual verification, code-review walkthrough, knowledge-base update, retrospective + merge.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Ruslan"
+      },
+      "source": "./plugins/disciplined-llm-sprint"
+    }
+  ]
+}
