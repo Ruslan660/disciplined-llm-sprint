@@ -17,10 +17,10 @@ After invocation, this skill walks the user through a fixed 7-phase script. Each
 
 The workflow is grounded in five principles:
 
-1. **TDD до первой строчки** — failing test first for all business logic and services. UI captured by snapshot tests post-implementation.
+1. **TDD before the first line** — failing test first for all business logic and services. UI captured by snapshot tests post-implementation.
 2. **Documentation as external memory** — 5 levels: design specs, ADRs, sprint plans, project CLAUDE.md, knowledge-base session notes.
 3. **Regression tests on reference data** — snapshot UI, golden JSON, golden streams, migration fixtures.
-4. **Code review with the "if I don't understand it, I don't merge it" rule** (sometimes named "не понял — не мерджу") — atomic commits + walkthrough; anything unclear becomes a knowledge-base concept page.
+4. **Code review with the "if I don't understand it, I don't merge it" rule** — atomic commits + walkthrough; anything unclear becomes a knowledge-base concept page.
 5. **Hard scope boundaries** — project CLAUDE.md, sprint plan in/out scope, explicit self-reminders.
 
 See `references/5-principles.md` for the full digest.
@@ -88,7 +88,7 @@ Once the scope is locked, transition to Phase 1.
 4. Wait for the user to complete the exercise.
 5. Review the exercise. Common issues: missed edge cases, unidiomatic syntax, misunderstanding of why the construct exists. Address each one conversationally.
 
-**Gate per concept:** The user explicitly confirms understanding before the loop moves to the next concept. A clear affirmative ("got it" / "understood" / "Понял" — match the user's working language) = green light. Any hedge ("not quite" / "kind of" / "вроде ясно, но…") triggers an expanded explanation or a second exercise.
+**Gate per concept:** The user explicitly confirms understanding before the loop moves to the next concept. A clear affirmative ("got it" / "understood" / "makes sense" — match the user's working language; treat equivalent affirmatives in any language the user is speaking) = green light. Any hedge ("not quite" / "kind of" / "sort of clear but…") triggers an expanded explanation or a second exercise.
 
 After all concepts are processed, transition to Phase 3.
 
@@ -114,7 +114,7 @@ See `templates/lecture-skeleton.md` for a suggested lecture structure.
 3. After the Block's last task is verified:
    - Mandatory: produce a **detailed recap** (see Block Recap below).
    - Mandatory: offer a **hands-on exercise** for the user (see Block Recap below).
-4. **Gate:** the user explicitly confirms the recap and indicates readiness for the next Block — an affirmative such as "next" / "ok" / "let's go" / "дальше" / "поехали" (match the user's working language). **Silence or ambiguity does not count as confirmation — ask again.**
+4. **Gate:** the user explicitly confirms the recap and indicates readiness for the next Block — an affirmative such as "next" / "ok" / "let's go" / "continue" (match the user's working language; treat equivalent affirmatives in any language the user is speaking). **Silence or ambiguity does not count as confirmation — ask again.**
 
 ### Block Recap + Hands-on Rule (mandatory)
 
@@ -178,7 +178,7 @@ After the last Block completes, transition to Phase 4.
    - Anything still unclear → mark the topic as a concept-page candidate for Phase 6.
 3. After the walkthrough, summarize the concept-page candidates list.
 
-**Hard rule:** if the user cannot explain a commit back in their own words ("не понял — не мерджу" / "I don't understand it, I don't merge it"), that commit needs additional documentation, a clarifying refactor, or both — before merge.
+**Hard rule:** "If I don't understand it, I don't merge it." If the user cannot explain a commit back in their own words, that commit needs additional documentation, a clarifying refactor, or both — before merge.
 
 **Gate:** the user confirms the walkthrough is complete and the concept-page candidates list is captured. Anything that becomes a planned concept page must surface in Phase 6.
 

@@ -47,7 +47,7 @@ If the skill catches itself skipping hands-on without an explicit reason, that i
 
 | Failure mode | Symptom | Correction |
 |---|---|---|
-| Skill stops doing recaps after the third Block | User says "ок" faster each Block, skill drops the recap | Reintroduce the recap explicitly on the next Block; flag in retro. |
+| Skill stops doing recaps after the third Block | User says "ok" faster each Block, skill drops the recap | Reintroduce the recap explicitly on the next Block; flag in retro. |
 | Recaps become very short | "Did X. Block done." | Lengthen — at minimum: files, commits, verifications. |
 | Hands-on always defaults to "read the diff" | Same exercise every Block | Vary by Block content; reflective questions are underused. |
 | User completes hands-on but skill does not check it | Skill moves on without feedback | Always close the loop — review the hands-on output before saying "next Block". |

@@ -2,9 +2,9 @@
 
 These are the five principles the disciplined-llm-sprint workflow is built on. They are summarized in `SKILL.md`; this file is the deeper rationale for each.
 
-The principles come from one practitioner's writeup ("Пять принципов работы с LLM", Habr, 2026) and have been validated in production sprint work.
+The principles come from one practitioner's writeup ("Five Principles of Working with LLMs", originally published on Habr in 2026, in Russian) and have been validated in production sprint work.
 
-## 1. TDD до первой строчки
+## 1. TDD before the first line
 
 **The principle:** Write a failing test before any business-logic or service code. The LLM tends to "implement first, validate later" — which lets regressions slip in. A failing test forces the LLM and the human to align on the exact behavior being added.
 
@@ -48,7 +48,7 @@ At the start of every sprint, the LLM reads: current milestone spec, current spr
 
 **Anti-pattern:** Skipping snapshot/golden tests because "the code is too simple to regress". The simpler the code, the cheaper the snapshot — record it.
 
-## 4. Code review with the "не понял — не мерджу" rule
+## 4. Code review with the "if I don't understand it, I don't merge it" rule
 
 **The principle:** Walk every commit on the sprint branch with the human. Anything they cannot explain back in their own words is a defect: either insufficient documentation, an unclear implementation, or both. Fix it before merge.
 

@@ -39,7 +39,7 @@ Walks through 7 phases with explicit gates:
 | 2 | New-concept lectures | User learns each new concept before it appears in code |
 | 3 | TDD Execution | Atomic RED → GREEN → REFACTOR commits per Block; mandatory recap + hands-on after each Block |
 | 4 | Manual verification | UI smoke / integration test passing |
-| 5 | Code review walkthrough | "Не понял — не мерджу" gate — every commit explainable by the user |
+| 5 | Code review walkthrough | "If I don't understand it, I don't merge it" gate — every commit explainable by the user |
 | 6 | Knowledge-base update (optional) | Concept pages, question pages, session note |
 | 7 | Retrospective + merge | 3 retro questions + `--no-ff` merge |
 
