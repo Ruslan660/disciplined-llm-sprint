@@ -14,13 +14,11 @@ The plugin contains one skill (`disciplined-llm-sprint`) and supporting template
 
 ```bash
 # Add this marketplace
-/plugin marketplace add <repo-url>
+/plugin marketplace add Ruslan660/disciplined-llm-sprint
 
 # Install the plugin
 /plugin install disciplined-llm-sprint
 ```
-
-Replace `<repo-url>` with whatever the recipient was given (private GitHub URL, local file path, etc.).
 
 After install, the skill is invoked via `/disciplined-llm-sprint`.
 
@@ -54,7 +52,7 @@ Each phase has a blocking gate; the skill will not advance until the user confir
 
 ## Plugin license / sharing
 
-Currently private. Distribute by sharing the repository URL with people you want to collaborate with. They install via the `/plugin marketplace add` workflow above.
+Released under the MIT License — see [LICENSE](LICENSE) for the full text. Free to use, modify, fork, and redistribute, including for commercial purposes, provided the copyright notice and license terms are preserved. Install via the `/plugin marketplace add` workflow above.
 
 ## Source of truth
 
