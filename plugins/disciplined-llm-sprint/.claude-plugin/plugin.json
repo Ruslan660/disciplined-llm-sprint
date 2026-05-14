@@ -1,6 +1,6 @@
 {
   "name": "disciplined-llm-sprint",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Orchestrates a 7-phase disciplined sprint — kickoff gate, planning, lectures, TDD execution with Block Recap, manual verification, code-review walkthrough, knowledge-base update, retrospective + merge.",
   "author": {
     "name": "Ruslan"

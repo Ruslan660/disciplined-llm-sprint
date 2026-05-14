@@ -88,11 +88,41 @@ Once the scope is locked, transition to Phase 1.
 4. Wait for the user to complete the exercise.
 5. Review the exercise. Common issues: missed edge cases, unidiomatic syntax, misunderstanding of why the construct exists. Address each one conversationally.
 
-**Gate per concept:** The user explicitly confirms understanding before the loop moves to the next concept. A clear affirmative ("got it" / "understood" / "makes sense" — match the user's working language; treat equivalent affirmatives in any language the user is speaking) = green light. Any hedge ("not quite" / "kind of" / "sort of clear but…") triggers an expanded explanation or a second exercise.
+**Gate per concept:** The user explicitly confirms understanding before the loop moves to the next concept. A clear affirmative ("got it" / "understood" / "makes sense" — match the user's working language; treat equivalent affirmatives in any language) = green light. Any hedge ("not quite" / "kind of" / "sort of clear but…") triggers an expanded explanation or a second exercise. **Silence or ambiguity does not count as confirmation — ask again.**
+
+**Critical anti-pattern: no batch delivery.** Even if the user requests a format change mid-flow (e.g., "write lectures in HTML now"), apply it to **the next single lecture only**. Do NOT pre-generate remaining lectures in advance. Format choice never overrides the staged loop — each concept needs its own hands-on + question cycle before the next one starts. Batching breaks the chance to surface confusion early.
 
 After all concepts are processed, transition to Phase 3.
 
-See `templates/lecture-skeleton.md` for a suggested lecture structure.
+### Preferred lecture format
+
+Save each lecture as a **self-contained HTML file** in the user's knowledge base, organized by technology (not by sprint):
+
+```
+<knowledge-base>/raw/lectures/<technology>/<topic>.html
+```
+
+Examples: `swift/async-throwing-errors.html`, `swiftui/form-textfield-securefield.html`, `go/error-handling.html`.
+
+**Why HTML over Markdown:**
+- Rich typography with tuned line-height and system fonts
+- Inline syntax-highlighted code blocks (no external dependencies)
+- Visual callouts (info / warning / hands-on) via styled boxes
+- Comparison tables render cleanly
+- User can open in browser or via Obsidian Web Viewer
+- A standalone reference, reusable across future sprints
+
+**Inside each HTML file include:**
+- Topic-focused title (no "Lecture N" numbering — keeps file reusable)
+- A `meta` callout near the top: `"First introduced in: <sprint>, <project>, <month-year>"` — captures sprint origin without locking the file to that sprint
+- The lecture body (theory, code, comparison tables, pitfalls)
+- A **clearly demarcated hands-on section** at the end (use a distinctively-styled callout — e.g., purple border) with: task description, expected output, what to learn from doing it
+
+**Sibling Markdown index** in `<knowledge-base>/wiki/concepts/<technology>/<technology> Learning Path.md` — wikilink-friendly entry point listing all HTML lectures with 1-line summaries. This keeps Obsidian graph view useful while content lives in HTML.
+
+**If no knowledge base is configured for the project:** fall back to chat-only delivery, but still respect the staged loop (one lecture at a time).
+
+See `templates/lecture-skeleton.md` for a suggested lecture structure (works for both HTML and Markdown formats).
 
 ---
 
