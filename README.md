@@ -6,7 +6,7 @@ A single-plugin Claude Code marketplace hosting the `disciplined-llm-sprint` ski
 
 | Plugin | Version | Purpose |
 |--------|---------|---------|
-| `disciplined-llm-sprint` | 0.1.0 | 7-phase sprint orchestrator: kickoff → planning → lectures → TDD → verification → code review → knowledge base → retro + merge |
+| `disciplined-llm-sprint` | 0.3.0 | 7-phase sprint orchestrator: kickoff → planning → lectures → TDD → verification → code review → knowledge base → retro + merge |
 
 The plugin contains one skill (`disciplined-llm-sprint`) and supporting templates + references. No agents, no hooks, no MCP servers. Pure process orchestration.
 
